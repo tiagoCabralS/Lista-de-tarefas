@@ -1,7 +1,7 @@
 from funcoes import *
 from time import sleep
 
-tasks = [['Comprar arroz', False]]
+tasks = []
 
 print('-' * 42)
 print(f'{"LISTA DE TAREFAS":^42}')
@@ -11,7 +11,7 @@ while True:
     opc = funcoes()
     print('-' * 42)
 
-    if opc == 5:
+    if opc == 6:
         print('Saindo..')
         sleep(1)
         break
@@ -31,6 +31,10 @@ while True:
     elif opc == 4:
         ind = int(input("Tarefa a ser excluída: "))
         excluir(tasks, ind)
+        sleep(1)
+
+    elif opc == 5:
+        priorizar(tasks)
         sleep(1)
     
     print('-' * 42)
