@@ -9,7 +9,7 @@ def add(lista, prioridade=30):
 
 def visualizar(lista):
     for c in range(0, len(lista)):
-        print(f"\033[0;{lista[c][2]};40m[{'x' if lista[c][1] == True else ' '}] {c} - {lista[c][0]}]\033[m")
+        print(f"\033[0;{lista[c][2]};40m[{'x' if lista[c][1] == True else ' '}] {c} - {lista[c][0]}\033[m")
 
 def concluir(lista):
     visualizar(lista)
@@ -23,11 +23,11 @@ def concluir(lista):
     print(f'\033[0;32;40mTarefas concluídas!\033[m')
 
 def excluir(lista, indice):
-    visualizar()
+    visualizar(lista)
     lista.remove(lista[indice])
 
 def priorizar(lista):
-    visualizar()
+    visualizar(lista)
     tarefa = int(input('Tarefa: '))
     nivel = int(input('Nível de prioridade: '))
 
@@ -38,13 +38,20 @@ def priorizar(lista):
     elif nivel == 3:
         lista[tarefa][2] = 31
 
+def editar(lista):
+    visualizar(lista)
+    tarefa = int(input('Tarefa a ser editada: '))
+    nova = input("Nova tarefa: ")
+    lista[tarefa][0] = nova
+
 def funcoes():
     print(' 1 - Visualizar lista \n',
          '2 - Adicionar tarefa \n',
          '3 - Marcar tarefa como concluída\n',
          '4 - Excluir tarefa\n',
          '5 - Priorizar\n',
-         '6 - Sair')
+         '6 - Editar\n',
+         '7 - Sair')
     
     opc = int(input("Opção: "))
 
