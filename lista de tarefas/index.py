@@ -11,7 +11,7 @@ while True:
     opc = funcoes()
     print('-' * 42)
 
-    if opc == 6:
+    if opc == 7:
         print('Saindo..')
         sleep(1)
         break
@@ -35,6 +35,10 @@ while True:
 
     elif opc == 5:
         priorizar(tasks)
+        sleep(1)
+
+    elif opc == 6:
+        editar(tasks)
         sleep(1)
     
     print('-' * 42)
